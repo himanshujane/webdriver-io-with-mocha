@@ -21,12 +21,6 @@ class LoginPage extends Page {
         this.btnSubmit.click(); 
     }
 
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
-    open () {
-        return super.open('login');
-    }
 }
 
 export default new LoginPage();

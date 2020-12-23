@@ -1,4 +1,4 @@
-const baseConfig = require('./base_shared.conf.js');
+const baseConfig = require('./baseShared.conf.js');
 const merge = require('deepmerge')
 
 exports.config = merge(baseConfig.config, {

@@ -17,8 +17,12 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.spec.js'
     ],
+
+    //Specify the Environment you like to run your testcase in [Example test or pre-prod]
+    environment: "test",
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -95,7 +99,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://the-internet.herokuapp.com/',
+    //baseUrl: 'http://the-internet.herokuapp.com/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -280,8 +284,8 @@ exports.config = {
 
         if (error !== undefined) {
             try {
-                const timestamp = moment().format('YYYYMMDD-HHmmss.SSS')
-                const filepath = path.join('Screenshots/', timestamp + "_" + test.title + '.png')
+                const timestamp = moment().format('YYYYMMDD-HHmmss')
+                const filepath = path.join('test/screenshots/', timestamp + "_" + test.title + '.png')
                 browser.saveScreenshot(filepath)
                 process.emit('test:screenshot', filepath)
             } catch {
