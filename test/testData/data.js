@@ -7,11 +7,7 @@ class testdata {
     get password() { return 'SuperSecretPassword!' }
 
     //File Paths
-    get testFiles() {
-        return {
-            image: 'test/testdata/testfiles/image.jpg',
-        }
-    }
+    get testFile() { return 'test/testdata/testfiles/image.jpg' }
 
     //---------------------------------------------------------------------------
     //Variable Env URLs
@@ -20,6 +16,8 @@ class testdata {
             case 'test':
                 return {
                     loginURL: 'http://the-internet.herokuapp.com/login',
+                    uploadURL: 'http://the-internet.herokuapp.com/upload',
+                    brokenImages: 'http://the-internet.herokuapp.com/broken_images'
                 }
             case 'pre-prod':
                 return {
