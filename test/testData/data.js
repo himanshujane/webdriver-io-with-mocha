@@ -15,9 +15,10 @@ class testdata {
         switch (base.config.environment) {
             case 'test':
                 return {
+                    baseURL: 'http://the-internet.herokuapp.com',
                     loginURL: 'http://the-internet.herokuapp.com/login',
-                    uploadURL: 'http://the-internet.herokuapp.com/upload',
-                    brokenImages: 'http://the-internet.herokuapp.com/broken_images'
+                    uploadURL: 'http://the-internet.herokuapp.com/upload'
+
                 }
             case 'pre-prod':
                 return {

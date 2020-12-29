@@ -17,7 +17,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.spec.js'
+        './test/specs/**/broken*.spec.js'
     ],
 
     //Specify the Environment you like to run your testcase in [Example test or pre-prod]
@@ -47,26 +47,26 @@ exports.config = {
     //
     //capabilities: [{
 
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
+    // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+    // grid with only 5 firefox instances available you can make sure that not more than
+    // 5 instances get started at a time.
 
-        // maxInstances: 5,
-        // //
-        // browserName: 'chrome',
-        // acceptInsecureCerts: true,
-        // 'goog:chromeOptions': {
-        //     excludeSwitches: ['enable-automation'],
-        //     useAutomationExtension: false,
-        //     args: ['--disable-gpu',
-        //         '--disable-notification',
-        //         'disable-infobars',
-        //         '--no-sandbox']
-        // }
-        // If outputDir is provided WebdriverIO can capture driver session logs
-        // it is possible to configure which logTypes to include/exclude.
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
+    // maxInstances: 5,
+    // //
+    // browserName: 'chrome',
+    // acceptInsecureCerts: true,
+    // 'goog:chromeOptions': {
+    //     excludeSwitches: ['enable-automation'],
+    //     useAutomationExtension: false,
+    //     args: ['--disable-gpu',
+    //         '--disable-notification',
+    //         'disable-infobars',
+    //         '--no-sandbox']
+    // }
+    // If outputDir is provided WebdriverIO can capture driver session logs
+    // it is possible to configure which logTypes to include/exclude.
+    // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+    // excludeDriverLogs: ['bugreport', 'server'],
     //}],
     //
     // ===================
@@ -278,7 +278,7 @@ exports.config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    afterTest: function (test, context, { error, result, duration, passed, retries }) {
         const path = require('path')
         const moment = require('moment')
 

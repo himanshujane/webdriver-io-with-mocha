@@ -1,17 +1,19 @@
 import Page from './page'
-var path = require('path')
+import utils from '../common/utility'
 
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class UploadPage extends Page {
+class BrokenImagesPage extends Page {
     /**
      * define selectors using getter methods
      */
     get allImages() { return $$('img') }
+    get linkBrokenImage() { return $('=Broken Images') }
+    get txtHeading() { return $('h3=Broken Images') }
 
     /**
-     * a method to encapsule automation code to interact with the page
+     * method to return list of broken images by checking natural width property
      */
     getBrokenImages() {
         let brokenImageNames = []
@@ -27,6 +29,25 @@ class UploadPage extends Page {
         }
         return brokenImageNames
     }
-}
 
-export default new UploadPage();
+    /**
+    * method to return list of broken images by making api call
+    */
+    getBrokenImagesUsingAPI() {
+        let brokenImageNames = []
+        let ele
+        let i = 0
+        let response
+        for (ele of this.allImages) {
+
+            response = utils.makeGETRequest(ele.getAttribute("src"))
+            if (response.status != 200) {
+                brokenImageNames[i] = ele.getAttribute("src")
+                i++
+            }
+        }
+        return brokenImageNames
+
+    }
+}
+export default new BrokenImagesPage();
