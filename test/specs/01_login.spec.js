@@ -1,6 +1,6 @@
 import loginPage from '../pageObjects/login.page'
 import securePage from '../pageObjects/secure.page'
-import data from '../testData/data'
+import data from '../dataProvider/data'
 
 
 describe('My Login application', () => {

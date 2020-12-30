@@ -17,7 +17,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/broken*.spec.js'
+        './test/specs/**/*.spec.js'
     ],
 
     //Specify the Environment you like to run your testcase in [Example test or pre-prod]
@@ -43,7 +43,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 3,
+    maxInstances: 2,
     //
     //capabilities: [{
 
@@ -285,7 +285,7 @@ exports.config = {
         if (error !== undefined) {
             try {
                 const timestamp = moment().format('YYYYMMDD-HHmmss')
-                const filepath = path.join('test/screenshots/', timestamp + "_" + test.title + '.png')
+                const filepath = path.join('screenshots/', timestamp + "_" + test.title + '.png')
                 browser.saveScreenshot(filepath)
                 process.emit('test:screenshot', filepath)
             } catch {

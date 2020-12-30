@@ -1,5 +1,5 @@
 import uploadPage from '../pageObjects/upload.page'
-import data from '../testData/data'
+import data from '../dataProvider/data'
 
 describe('Test File Upload', () => {
     it('should able to upload file', () => {

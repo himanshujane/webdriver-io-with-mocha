@@ -1,5 +1,6 @@
 import Page from './page'
-import utils from '../common/utility'
+import utils from '../generic/utility'
+import data from '../dataProvider/data'
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -38,9 +39,13 @@ class BrokenImagesPage extends Page {
         let ele
         let i = 0
         let response
+        let url
         for (ele of this.allImages) {
+            if (browser.capabilities.browserName == "firefox") {
+                url = data.getURL().baseURL + "/" + ele.getAttribute("src")
+            } else url = ele.getAttribute("src")
 
-            response = utils.makeGETRequest(ele.getAttribute("src"))
+            response = utils.makeGETRequest(url)
             if (response.status != 200) {
                 brokenImageNames[i] = ele.getAttribute("src")
                 i++

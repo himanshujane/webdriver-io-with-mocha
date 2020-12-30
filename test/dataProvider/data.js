@@ -7,7 +7,7 @@ class testdata {
     get password() { return 'SuperSecretPassword!' }
 
     //File Paths
-    get testFile() { return 'test/testdata/testfiles/image.jpg' }
+    get testFile() { return 'test/dataProvider/testfiles/image.jpg' }
 
     //---------------------------------------------------------------------------
     //Variable Env URLs

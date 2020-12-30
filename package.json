@@ -4,8 +4,9 @@
   "description": "",
   "main": "config.js",
   "scripts": {
-    "test-chrome": "./node_modules/.bin/wdio ./configs/chrome_v87.conf.js",
-    "test-firefox": "./node_modules/.bin/wdio ./configs/firefox_v84.conf.js"
+    "chrome": "./node_modules/.bin/wdio ./configs/chrome_v87.conf.js",
+    "firefox": "./node_modules/.bin/wdio ./configs/firefox_v84.conf.js",
+    "multiCap": "./node_modules/.bin/wdio ./configs/multiCap.conf.js"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
 import brokenImagesPage from '../pageObjects/brokenImages.page'
-import data from '../testData/data'
+import data from '../dataProvider/data'
 
 describe('Test Broken Images', () => {
 
